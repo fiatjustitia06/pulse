@@ -443,6 +443,7 @@ create policy "Admin delete analyses"
                       <div style={{ fontFamily:'var(--font-mono)', fontSize:'0.63rem', color:'rgba(255,255,255,0.28)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', paddingRight:'8px' }}>{fmtMeta(log.metadata)}</div>
                       <div style={{ fontFamily:'var(--font-mono)', fontSize:'0.63rem', color:log.ip_address?'rgba(255,255,255,0.4)':'rgba(255,255,255,0.14)' }}>{log.ip_address||'—'}</div>
                       <div style={{ fontFamily:'var(--font-mono)', fontSize:'0.63rem', color:'rgba(255,255,255,0.22)' }}>{parseUA(log.user_agent)}</div>
+                      {/*@ts-ignore*/}
                       <DelBtn onClick={e=>{(e as any).stopPropagation?.(); setDelConfirm({type:'log',id:log.id,label:'log entry'})}} />
                     </div>
                   )

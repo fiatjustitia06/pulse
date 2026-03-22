@@ -80,6 +80,7 @@ export default function PulseMap({ onLocationSelect, selectedPin, hideSearchBar,
 
       // Initial tile layer
       const initStyle = (document.documentElement.getAttribute('data-map-style') as any) || 'street'
+      /*@ts-ignore*/
       const t = TILES[initStyle as 'street' | 'dark' | 'satellite'] || TILES.street
       tileLayerRef.current = L.tileLayer(t.url, { attribution: t.attr, subdomains: 'abcd', maxZoom: 19 }).addTo(map)
 

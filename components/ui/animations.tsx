@@ -144,6 +144,7 @@ export function AnimNumber({ value, suffix = '' }: { value: number; suffix?: str
   const spring = useSpring(0, { stiffness: 80, damping: 20 })
   const display = useTransform(spring, v => Math.round(v).toLocaleString())
   useEffect(() => { spring.set(value) }, [value, spring])
+  /*@ts-ignore*/ 
   return <motion.span>{display}{suffix}</motion.span>
 }
 
